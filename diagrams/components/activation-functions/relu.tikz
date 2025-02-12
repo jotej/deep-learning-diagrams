@@ -5,10 +5,11 @@
 \begin{document}
     \begin{tikzpicture}
 
-\matrix (m_in) [matrix of math nodes,
-                     nodes={draw, minimum size=1cm
-, scale=1, anchor=center, align=center},
-                     column sep=-\pgflinewidth, row sep=-\pgflinewidth]
+\matrix (m_in) [
+            matrix of math nodes,
+            nodes={draw, minimum size=1cm, scale=1, anchor=center, align=center},
+            column sep=-\pgflinewidth, row sep=-\pgflinewidth
+]
         {
              0.2  & -1.2  & \dots & -1.3 \\
             -0.8  &  0.4  & \dots &  0.3 \\
@@ -35,11 +36,12 @@
 
         \draw[->] (plot.south) -- (m_out.north);
 
-        \matrix (m_out) [matrix of math nodes,
-                     nodes={draw, minimum size=1cm, scale=1, anchor=center, align=center},
-                     column sep=-\pgflinewidth,
-                     row sep=-\pgflinewidth,
-                     below=1cm of plot
+        \matrix (m_out) [
+            matrix of math nodes,
+            nodes={draw, minimum size=1cm, scale=1, anchor=center, align=center},
+            column sep=-\pgflinewidth,
+            row sep=-\pgflinewidth,
+            below=1cm of plot
         ]
         {
              0.2  &   0   & \dots &  0  \\
