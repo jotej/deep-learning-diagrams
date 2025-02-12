@@ -1,0 +1,11 @@
+\documentclass[tikz]{standalone}
+
+\begin{document}
+
+    \begin{tikzpicture}
+        \draw (0,0) circle (1);
+        \draw (2,0) circle (1.5in);
+        \draw (5,0) ellipse (10pt and 20 pt);
+    \end{tikzpicture}
+
+\end{document}
