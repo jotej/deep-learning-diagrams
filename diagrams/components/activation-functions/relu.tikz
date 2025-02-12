@@ -5,7 +5,8 @@
 
 
 \begin{document}
-    \begin{tikzpicture}
+    \begin{tikzpicture}[scale=0.2]
+
         \matrix (m_in) [matrix of math nodes,
                      nodes={draw, minimum size=1cm, anchor=center, align=center},
                      column sep=-\pgflinewidth,
@@ -39,10 +40,10 @@
                      below=1cm of plot
         ]
         {
-            0.2   & -0.1  & \dots & -1.5 \\
-            -0.3  &  0.4  & \dots & 0.3  \\
-            \dots & \dots & \dots & -0.2 \\
-            1.6   & 0.5   & 0.3   & -0.1 \\
+            0.2   & 0  & \dots & 0 \\
+            0  &  0.4  & \dots & 0.3  \\
+            \dots & \dots & \dots & 0 \\
+            1.6   & 0.5   & 0.3   & 0 \\
         };
 
         \draw[->] (m_in.south) -- (plot.north);
