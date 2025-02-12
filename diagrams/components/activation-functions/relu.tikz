@@ -1,11 +1,51 @@
 \documentclass[tikz]{standalone}
+\usepackage{amsmath}
+\usetikzlibrary{matrix, positioning}
+\usepackage{pgfplots}
+
 
 \begin{document}
-
     \begin{tikzpicture}
-        \draw (0,0) circle (1);
-        \draw (2,0) circle (1.5in);
-        \draw (5,0) ellipse (10pt and 20 pt);
-    \end{tikzpicture}
+        \matrix (m_in) [matrix of math nodes,
+                     nodes={draw, minimum size=1cm, anchor=center, align=center},
+                     column sep=-\pgflinewidth,
+                     row sep=-\pgflinewidth]
+        {
+            0.2   & -0.1  & \dots & -1.5 \\
+            -0.3  &  0.4  & \dots & 0.3  \\
+            \dots & \dots & \dots & -0.2 \\
+            1.6   & 0.5   & 0.3   & -0.1 \\
+        };
 
+        \node (plot) [below=1cm of m_in] {
+            \begin{tikzpicture}
+                \begin{axis}[
+                    axis lines=middle,
+                    xlabel={$x$}, ylabel={$f(x)$},
+                    samples=100,
+                    domain=-5:5,
+                    width=8cm,
+                    height=6cm
+                ]
+                    \addplot[thick, blue] {max(0,x)};
+                \end{axis}
+            \end{tikzpicture}
+        };
+
+        \matrix (m_out) [matrix of math nodes,
+                     nodes={draw, minimum size=1cm, anchor=center, align=center},
+                     column sep=-\pgflinewidth,
+                     row sep=-\pgflinewidth,
+                     below=1cm of plot
+        ]
+        {
+            0.2   & -0.1  & \dots & -1.5 \\
+            -0.3  &  0.4  & \dots & 0.3  \\
+            \dots & \dots & \dots & -0.2 \\
+            1.6   & 0.5   & 0.3   & -0.1 \\
+        };
+
+        \draw[->] (m_in.south) -- (plot.north);
+        \draw[->] (plot.south) -- (m_out.north);
+    \end{tikzpicture}
 \end{document}
