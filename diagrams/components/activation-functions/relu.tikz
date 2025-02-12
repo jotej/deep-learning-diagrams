@@ -1,18 +1,16 @@
-\documentclass[tikz,border={200pt 0pt}]{standalone}
+\documentclass[tikz,border={200pt 0.5cm}]{standalone}
 \usetikzlibrary{matrix, positioning}
 \usepackage{pgfplots}
 
 \begin{document}
     \begin{tikzpicture}
-
-\node (title) [align=center] {\LARGE
-\textbf{ReLU Activation Function}};
+        \node (title) {\LARGE \textbf{ReLU Activation Function}};
 
         \matrix (m_in) [
             matrix of math nodes,
             nodes={draw, minimum size=1cm, scale=1, anchor=center, align=center},
             column sep=-\pgflinewidth, row sep=-\pgflinewidth,
-            below=1cm of title
+            below=0.5cm of title
         ]
         {
              0.2  & -1.2  & \dots & -1.3 \\
