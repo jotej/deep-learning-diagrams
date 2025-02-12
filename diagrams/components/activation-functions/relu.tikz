@@ -1,26 +1,23 @@
-\documentclass[tikz]{standalone}
+\documentclass[tikz,border={100pt 0pt}]{standalone}
 \usepackage{amsmath}
 \usetikzlibrary{matrix, positioning}
 \usepackage{pgfplots}
 
-
 \begin{document}
     \begin{tikzpicture}
 
-        % Input Matrix
 \matrix (m_in) [matrix of math nodes,
                      nodes={draw, minimum size=1cm
-, scale=0.2, anchor=center, align=center},
+, scale=1, anchor=center, align=center},
                      column sep=-\pgflinewidth, row sep=-\pgflinewidth]
         {
-            $0.2$ & $0$ & $\dots$ & $0$ \\
-            $a_{21}$ & $a_{22}$ & $a_{23}$ \\
-            $a_{31}$ & $a_{32}$ & $a_{33}$ \\
-            $a_{41}$ & $a_{42}$ & $a_{43}$ \\
+            0.2   & -1.2  & \dots & -1.3 \\
+            -0.8  &  0.4  & \dots & 0.3  \\
+            \dots & \dots & \dots & -0.2 \\
+            1.6   & 0.5   & 0.3   & -0.7 \\
         };
 
-
-        \node (plot) [below=1cm of m_in, scale=0.2] {
+        \node (plot) [below=1cm of m_in, scale=1] {
             \begin{tikzpicture}
                 \begin{axis}[
                     axis lines=middle,
@@ -36,7 +33,7 @@
         };
 
         \matrix (m_out) [matrix of math nodes,
-                     nodes={draw, minimum size=1cm, scale=0.2, anchor=center, align=center},
+                     nodes={draw, minimum size=1cm, scale=1, anchor=center, align=center},
                      column sep=-\pgflinewidth,
                      row sep=-\pgflinewidth,
                      below=1cm of plot
