@@ -10,7 +10,7 @@
         % Input Matrix
 \matrix (m_in) [matrix of math nodes,
                      nodes={draw, minimum size=1cm
-, scale=0.5, anchor=center, align=center},
+, scale=0.2, anchor=center, align=center},
                      column sep=-\pgflinewidth, row sep=-\pgflinewidth]
         {
             $0.2$ & $0$ & $\dots$ & $0$ \\
@@ -20,7 +20,7 @@
         };
 
 
-        \node (plot) [below=1cm of m_in, scale=0.5] {
+        \node (plot) [below=1cm of m_in, scale=0.2] {
             \begin{tikzpicture}
                 \begin{axis}[
                     axis lines=middle,
@@ -36,7 +36,7 @@
         };
 
         \matrix (m_out) [matrix of math nodes,
-                     nodes={draw, minimum size=1cm, scale=0.5, anchor=center, align=center},
+                     nodes={draw, minimum size=1cm, scale=0.2, anchor=center, align=center},
                      column sep=-\pgflinewidth,
                      row sep=-\pgflinewidth,
                      below=1cm of plot
